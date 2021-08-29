@@ -1,0 +1,94 @@
+1) HTML 요소 분석
+- HTML 은 앞서 말했듯이 프로그래밍 언어가 아닌 마크업 언어이다. 이러한 마크업 언어인 HTML은 여러개의 Element(요소)로 돼있다.
+- 이 때, 하나의 element는 구성하는 요소들로는 Opening Tag, content, Closing Tag가 있다.
+예를 들어, <p>Hello, world!</p> 가 있을 때 앞의 <p>는 여는 태그이고, 그 안에 Hello, world!가 content(내용)이 되고, 마지막으로 </p>가 닫는 태그가 된다.
+그리고 이러한 구성 요소를 전부 포함하는 하나의 단위를 element라고 할 수 있다.
+2) 요소의 중첩
+- 흔히 하는 실수가 닫는 태그를 안쓰거나, 요소들을 중첩시킬 때 열고 닫고의 관계를 명확히 하지 않아서 발생한다. 
+예를 들어, <div><p></div></p> 이런식으로 하면 안된다. <div> 안에 <p>를 넣고 싶다면 <div><p></p></div>이렇게 해줘야한다.
+** 워낙 브라우저가 발달해서 이런 부분도 알아서 수정할 수 있지만, 해서는 안된다.
+
+3) 빈요소(empty elements)
+- 위에서 말한 html 요소 중에 content가 없는 '빈 요소'를 말한다.
+- 예를 들어, img, br, hr 태그 등은 여는 태그와 닫는 태그 안에 넣어줄만한 콘텐츠가 없는 태그다. 그자체로 역할을 다하기 때문이다.
+- 이 경우 닫는 태그를 명시할 필요가 없고, <img/> or <img> 둘중에 선택해서 사용하면 된다(둘다 똑같이 기능을 다한다)
+
+4) HTML 문서의 기본 골격 하나하나 살펴보기
+<!DOCTYPE html> => MDN에도 나와있지만 현재는 역사적인 유물일뿐 어떤 기능을 하지는 않는다. 단지 올바르게 동작하기 위해 필요한 것이라고만 생각하자.
+<html> => root 요소라고도 불리며 html 기본 골격의 핵심부분이 여기서부터 시작이고, 이것의 닫는 태그로 끝난다.
+  <head> => css, 페이지에 대한 설명, title, 문자 인코딩 정의 등 메타데이터를 담는 곳이다. 이 부분은 유저에게 보이지 않는 영역이다.
+    <meta charset="utf-8"> => 문서가 사용해야할 문서 집합을 'utf-8'로 설정하는 부분. utf-8로 설정해두면, 대부분의 언어를 커버할 수 있다. 
+    <title>MDN Examples</title> => 페이지의 제목을 설정하는 부분으로 한 문서당 하나만 넣어준다.
+  </head>
+  <body> => head태그와 달리 유저에게 보여지는 모든 부분을 담는 곳.
+  </body>
+</html>
+
+<<여기까지가 html의 가장 기본이되는 골격이다 
+
+5) 태그를 구분 짓는 속성 : 
+- 구획을 나누는 태그 : 레이아웃을 위한 태그들로 컨테이너 역할을 한다(ex, div 태그). 이 자체로는 아무것도 화면에 렌더링되지 않는다(물론 class명을 적용하고, css를 적용하면 다르지만)
+- 그 자체로 요소인 태그 : 태그 자체가 특정한 렌더링 요소를 포함하는 태그. 즉, 버튼 태그, input 태그처럼 단독으로 사용해도(css를 적용안해도) 사용자에게 보여지는 부분이 반드시 있는 태그
+
+6) 알고 있었지만 html의 주석은 <!-- --> 이런식으로 사용한다 ** 굳이 쓰기 귀찮으면 ctrl + / or command + / 로 대체가능!
+
+7) block vs Inline(** block_inline_test.html 에 연습 내용 정리)
+
+- block 요소 특징
+# 한라인 전체를 차지함. 예를 들어, body의 style에 width가 1190px로 되어있는 페이지에서 block요소를 사용하면
+자동으로 body width인 1190px 만큼 차지하게 됨. 가로폭 100%를 차지한다는 것! = 자동으로 줄바꿈이 된다는 것과 같음
+# 위의 연장으로 자동으로 줄바꿈이 되고, 자동으로 풀 가로폭을 차지하므로 항상 새로운 줄에서 시작함.
+# 디폴트로 margin-top, margin-bottom이 잡혀있음(inline은 없음)
+# block 요소 안에 block요소를 넣을 수도 있고, block요소안에 inline요소를 넣을수도 있음(요소의 중첩)
+
+** block요소 종류 : 
+<address> <article> <aside> <blockquote> <canvas> 
+<dd> <div> <dl> <dt> <fieldset> <figcaption> <figure>
+<footer> <form> <h1> - <h6> <header> <hr> <li> <main> <video>
+<nav> <noscript> <ol> <p> <pre> <section> <table> <tfoot> <ul> 
+
+- inline 요소 특징
+# block요소와 달리 안에 내용물이 차지하는 영역만큼만 차지함. 그렇기 때문에 새로운 라인에서 시작하지 않고, 자동 줄바꿈이 안됨
+# inline요소안에 inline요소를 넣을 수 있으나(span 태그 안에 strong태그를 넣는 등), inline요소 안에 block요소를 넣으면 안됨.
+
+** inline 요소 종류 :
+<a> <abbr> <acronym> <b> <bdo> <big> <br> <button> <cite> 
+<code> <dfn> <em> <i> <img> <input> <kbd> <label> <map> <object>
+<output> <q> <samp> <script> <select> <small> <span> <strong> <sub> 
+<sup> <textarea> <time> <tt> <var>
+
+# 대표적인 block요소와 inline요소로 컨테이너 역할을 하는 두개 : 각각 div와 span 태그 
+1) <div>이렇게 하면,<p>어떻게 될까</p>요?</div>
+2) <div>이렇게 하면,<span>어떻게 될까</span>요?</div>
+이 둘의 차이로 블록요소와 인라인요소를 비교해보면, 1번은 이렇게하면에서 줄바꿈이 일어나고,
+p태그 안의 콘텐츠가 그 다음줄에, 그리고 마지막으료 '요?' 부분이 3번째 줄에 나오게 된다.
+즉, 3등분이 된다(div 영역, p영역, div 영역). 그러나, 2번 예시는 똑같이 3등분이 될지라도
+세로로 3등분이 되는 것이 아닌 div 내에 span 부분만 따로 inline 컨테이너로 감싸지는 효과가 난다.
+예를 들어, span 태그의 스타일에 background-color를 green으로 하면, '어떻게 될까' 부분만 배경이 초록색으로 된다.
+(inline요소 특성상 배경이 변하는 범위는 '어떻게 될까' 라는 글씨를 포함하는 만큼만[necessary])
+하지만, 1번 예시의 p태그는 블록 요소이기 때문에 한줄을 전부 차지가하게 되어 세로로 3등분이 되고,
+만약 p태그에 background-color attribute를 green으로 주면, 2번과 달리 한행(넓이를 다 차지하는)이 초록색이 될 것이다.
+
+** 둘의 차이는 꼭 알아두어야 한다!!
+
+8) 콘텐츠 카테고리 (알고만 넘어가자)
+- 메타 데이터 콘텐츠 : 
+<base>, <command>, <link>, <meta>, <noscript>, <script>, <style>, <title> 와 같이 
+화면상에서 실제 보이지 않는 부분에 대해 정의하는 메타데이터와 관련된 혹은 head 태그와 관련된 태그들로 이뤄진 분류이다.
+- 플로우 콘텐츠 : 
+텍스나 내장 콘텐츠와 같은 요소들로 대부분의 콘텐츠들을 포함하는 영역 (일부 메타데이터만 제외)
+- 구획 콘텐츠(section contents) : 
+div는 없지만, 컨테이너와 같이 특정한 구획을 나누는, 범위를 설정하는 요소들을 포함하는 영역
+예시 : <article>, <aside>, <nav>, <section>
+- 제목 콘텐츠(heading contents) : 
+흔히 쓰는 h1-h6 과 같이 구획의 제목을 정의하는 콘텐츠를 포함하는 영역
+- 구문 콘텐츠(Phrasing contents) : 
+텍스트 그리고 텍스트가 포함하는 마크업을 포함하는 영역(이러한 구문 콘텐츠가 모여서 문단이 됨)
+- 임베디드 콘텐츠(embeded contents) :
+이미지나 비디오 등의 외부 소스 등을 가져오거나 삽입할 때 쓰는 요소들을 포함하는 영역
+<video> <iframe> <img> 와 같은
+- 대화형 콘텐츠(interactive contents) :
+말그대로 사용자와의 인터랙션을 포함하는 콘텐츠로 버튼이나, input(hidden이 아닌 경우), select 등이 포함되는 영역
+
+=> 나중에 MDN을 읽을 때 특정 태그가 어떤 분류에 속하는 지등을 통해 이해가 더욱 용이할 수 있기에 알아두자!
+
