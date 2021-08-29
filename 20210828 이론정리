@@ -73,3 +73,31 @@ W3C에 개선안을 제공했고(HTML Living Standard) 현재 우리가 HTML5로
 이런 경우에는 W3C 규정을 지켜도 브라우저 자체가 지원을 안하기 때문에 호환성을 보장할 수 없다. 이러한 경우를 위해 특정 사이트에서는 특정 브라우저가 특정 기능을 지원하는지 여부를
 알려준다고 한다(https://caniuse.com/) 이러한 사이트를 참고해서 크로스 브라우징을 고려해야할 것 같다.
 
+
+4) 실습환경 세팅
+
+- vsCode 관련 유용한 extension추천 : 
+# auto rename tag(앞 태그를 바꾸면 뒤태그도 자동으로 바뀌는 기능), 
+# live server(로컬서버로 웹 페이지를 띄워서 수정 사항이 바로 반영되도록 하는 것)
+# prettier(자주 써봤지만, 들여쓰기 등 말그대로 prettier하게 코드 배치 등을 조정해줌)
+
+- vsCode 관련 단축키
+# ctrl + w(command + w) : 현재 창을 닫음
+# ctrl + shift + t(command + shift + t) : 위에서 닫은 창을 잘못닫은 경우 다시 열어줌
+# ctrl + shift + f(command + shift + f) : 전체 검색 
+# ctrl + shift + e(command + shift + e) : exlorer(파일 탐색파트로 이동)
+# ctrl + (+) : 에디터 확대
+# ctrl + (-) : 에디터 축소
+# ctrl + b(command + b) : 사이드바 열고 닫기
+# command + ] : 전체 행 자체를 들여쓰기함(탭키는 마우스 커서부터 들여쓰기 되지만)
+# ctrl + enter (command + enter) : 윗문장에서 작업하다가 띄어쓰기 혹은 끝으로 가는 과정없이 바로 아래줄로 가고싶을 떄
+# ctrl + shift + enter (command + shift + enter) : 아래문장에서 작업하다가 띄어쓰기 혹은 끝으로 가는 과정없이 바로 위줄로 가고싶을 떄
+# Alt + 위아래 방향키 : 현재 행을 이동시킴
+# command + shift + k : 현재 행 삭제
+# command + shift + 방향키 : 현재 행 복사 
+# ctrl + /(command + /) : 주석 토글
+
+
+
+
+
