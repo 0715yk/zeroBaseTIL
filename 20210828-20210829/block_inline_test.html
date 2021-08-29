@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div style="background-color: black; color: white; font-size:50px;">Zero Base Front-end Online Class 1st</div>
+    <hr />
+    <br />
+    <!-- inline & block 요소 테스트 -->
+    <div class="inline_block_parts" style="background-color: black; color: white">
+        <h1 style="background-color: yellow; margin: 0">나는 블록 요소 입니다</h1>
+        <p style="background-color: red; margin: 0">나는 블록 요소 입니다</p>
+    </div>
+    <div style="background-color: orange; margin: 0">
+        <a style="background-color: blue; margin: 0">나는 <em>인라인 요소</em> 입니다.</a>
+        오렌지 영역은 블록요소 이고, 블록요소 안에 이렇게 인라인 요소 삽입 가능!
+    </div>
+    <a style="background-color: navy; margin: 0">인라인 요소 테스트</a>
+    <a style="background-color: purple; margin: 0">인라인 요소 테스트</a>
+    <a style="background-color: black; margin: 0; color:white;">인라인 요소 테스트</a>
+    <a style="background-color: chartreuse; margin: 0">
+        <div style="background-color: chartreuse; margin: 0">인라인 요소 안에 블록 요소는 불가능!</div>
+    </a>
+    <span style="background-color: firebrick; margin: 0">
+        <a style="background-color: fuchsia; margin: 0">그러나<em>인라인 요소 안에 인라인 요소</em>는</a>
+        가능!
+    </span>
+    <br />
+    <br />
+    위와 같이 인라인 요소는 한줄을 전부 차지하지 않고, 해당 태그 안에 내용이 차지하는 범위 만큼의 영역만 차지한다.<br />
+    이에 반해, 블록요소(div, p, h1 등)는 한줄을 전부 차지한다.
+    <br />
+    <br />
+    <hr />
+    <h2>블록요소의 중첩 테스트</h2>
+    <br />
+    <div style="background-color: burlywood; height: 300px;">
+        부모 요소 1
+        <div style="background-color: salmon; height: 100px;">
+            &nbsp;&nbsp;자식 요소 1 : salmon color
+            <div style="background-color: brown; height: 40px;">&nbsp;&nbsp;&nbsp;&nbsp;자식요소 1의 자식요소 1</div>
+            <div style="background-color: greenyellow; height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;자식요소 1의 자식요소 2</div>
+        </div>
+        <div style="background-color: wheat; height: 100px;">
+            &nbsp;&nbsp;자식 요소 2 : wheat color
+            <div style="background-color: violet; height: 100px;">&nbsp;&nbsp;&nbsp;&nbsp;자식요소 2의 자식요소 1</div>
+        </div>
+    </div>
+</body>
+
+</html>
