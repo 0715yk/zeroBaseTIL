@@ -28,6 +28,59 @@
     <!-- <meta http-equiv="refresh" content="60; url=example.html"> 출처: https://webdir.tistory.com/308 [WEBDIR] -->
     <!-- 우외 같이 해주면 페이지를 새로고침 했을 때, example.html(준비해놓은)로 이동된다고 함(없으면 흔히 아는 현재 페이지로 리프레시) -->
 
+    <meta name="author" content="yongki hong" />
+    <meta name="description" content="This web site is .. nothing special but just for studying html" />
+    <!-- 위와 같이 메타 태그로 html 작성자와 간단한 설명을 붙일 수도 있다 -->
+
+    <!-- <meta property="og:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png" />
+    <meta property="og:description" content="The Mozilla Developer Network (MDN) provides
+  information about Open Web technologies including HTML, CSS, and APIs for both Web sites
+  and HTML5 Apps. It also documents Mozilla products, like Firefox OS." />
+    <meta property="og:title" content="Mozilla Developer Network" /> -->
+    <!--  윗부분은 MDN 페이지의 링크를 예를 들어, 네이버 블로그에 포스팅할 때 복붙하면, 이미지, 제목, 설명 등이 같이 나타나게 되는데, -->
+    <!-- 위에 property에 og는 Open Graph Data로 페이스북에서 만든 메타데이터 프로토콜이라고 한다. -->
+    <!-- 실제로 SWEA라는 삼성에서 제공하는 코딩테스트 연습 페이지를 개발자 도구로 살펴봐도 똑같은 프로토콜을 이용해서 링크를 가져오면 -->
+    <!-- 그림과 제목과 설명이 뜨게 된다. -->
+
+    <meta name="keyword" content="HTML, meta, metadata, metatag, zerobase">
+    <!-- 타이틀과는 약간 다르지만, 역시 검색엔진과 관련된 부분으로 인스타의 해시태그 정도를 생각하면 될 것 같다! -->
+    <!-- ** 여담이지만 마케터들은 이런걸 매우 신경써야할듯  -->
+
+    <!-- referrer 관련 정리 -->
+    <!-- 특정 도메인에서 다른 도메인으로 넘어갈 때, 예를 들어, google에서 구글 로그인으로갈 때(자기 자신에서 자기자신으로)-->
+    <!-- 혹은 다른 도메인에서 다른 도메인으로 넘어갈 때(네이버에서 구글) -->
+    <!-- 그 이전 정보가 전달되는데, 그것과 관련해서 그 정보를 넘길지, 혹은 어떤 정보를 넘길지, 넘길지 말지 등을 세팅해주는 부분 -->
+
+    <!-- 1) no! => 글자 그대로 아예 안보내는 세팅 -->
+    <meta name="referrer" content="no-referrer" />
+
+    <!-- 2) Referrer 기본값 -->
+    <!-- https://yongkis.com/login -> https://www.naver.com 갈때 yongkis.com/login 전송 -->
+    <meta name="referrer" content="unsafe-url" />
+
+    <!-- 3) 도메인만 전송 -->
+    <!-- https://yongkis.com/login -> https://www.naver.com 갈때 yongkis.com만 전송 -->
+    <meta name="referrer" content="origin" />
+
+    <!-- 4) 대상 주소가 https일때만 도메인 전송 -->
+    <!-- https://yongkis.com/login -> https://www.naver.com 갈때 yongkis.com만 전송 -->
+    <!-- http://www.naver.com면 안보냄 -->
+    <meta name="referrer" content="strict-origin" />
+
+    <!-- 5) 같은 홈페이지일때만 전송 -->
+    <!-- https://yongkis.com/login -> https://yongkis.com/main 갈때 yongkis.com/login 전송 -->
+    <!-- https://yongkis.com/login -> https://www.naver.com 갈때 전송 안함 -->
+    <meta name="referrer" content="same-origin" />
+
+    <!-- 6) 같은 홈페이지면 전체, 다른 홈페이지면 도메인만 -->
+    <!-- https://yongkis.com/login -> https://yongkis.com/main 갈때 yongkis.com/login 전송 -->
+    <!-- https://yongkis.com/login -> https://www.naver.com 갈때 yongkis.com 전송 -->
+    <meta name="referrer" content="origin-when-cross-origin" />
+
+    <!-- 7) 같은 홈페이지일때는 전체, 다른 https 홈페이지면 도메인, http면 제거 -->
+    <!-- https://yongkis.com/login -> https://yongkis.com/main 갈때 yongkis.com/login 전송 -->
+    <!-- https://yongkis.com/login -> https://www.naver.com 갈때 yongkis.com 전송 -->
+    <!-- https://yongkis.com/login -> http://www.naver.com 갈때 전송 x -->
 
     <!-- ViewPort 설정 -->
     <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=10.0, minimum-scale=0.5">
@@ -52,6 +105,23 @@
     <!-- 마지막으로 user-scalable은 디폴트가 yes인데 사용자가 확대(손가락으로 벌려서 스와이핑 하는 것)할 수 있게할지, 없게하는지의 세팅이다. 막으려면 no로 세팅해주기 -->
     <!-- 실제로 위와 같이 세팅해보면, 웹브라우저에서도 확대가 안됨!! -->
 
+    <link href="style/fake.css" type="text/css" rel="stylesheet" />
+    <!-- MIME 타입에 대해서 설명해보면, link태그의 href 부분에 css 파일 확장자는 아무 정보도 주지 못한다 -->
+    <!-- 그래서 MIME 타입에 타입/서브타입을 명시해주어야 나중에 잘못 파일을 올려도 오류를 막을 수 있다. -->
+    <!-- 즉, 파일 확장자를 css로 했다해서 css파일로 알아듣지 않고(해석할 때), type을 명시해줘야(MIME 타입) 한다는 것 -->
+    <!-- ** rel은 link태그에서 필수 요소로 현재문서와 외부 리소스 사이의 관계(relation의 약자인듯)를 표시한다 -->
+    <!-- 밈타입이 뭐가 있는지는 외우기보다는 그때그때 찾아쓰면 됨! -->
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+    <!-- style 태그는 아까 위에서 링크태그를 이용해서 외부에서 css파일을 불러오거나, 내부 스타일 시트(style태그가 해당), 인라인에 쓸 수 있다 -->
+    <!-- head에 style태그를 쓰는 방법이 내부 스타일 시트를 사용하는 방법이다. -->
+    <!-- css 적용의 우선순위는 '!important를 걸어준 속성 > 인라인 > 내부 스타일 시트 > 외부 스타일 시트 > 브라우저 기본값' 순서이다 -->
 
     <!-- 타이틀 태그(title tag) -->
     <title>북마크 제목으로 쓰일까?</title>
@@ -63,10 +133,21 @@
     <!-- 키워드 형식으로 작성하기보다는 간략하게라도 설명 형태로 해야 광고로 취급 안하고, 검색엔진망에 잘걸리게 된다. -->
     <!-- 테스트 해보면 알지만 타이틀 태그에는 <strong> <em> 등의 태그가 먹히지 않음. 단지 title 태그와 그 안의 내용물만 포함됨(닫힘태그도) -->
     <!-- 북마크에 추가할 때 디폴트 제목으로 이 title이 쓰인다! -->
+
+
 </head>
 
 <body>
     <div>Hello, world!</div>
+    <script>
+        console.log('마지막으로 script 태그는 head 태그안에 써주지 않고, body태그의 사이에서 제일 마지막에 써주는 것이 좋다.')
+        console.log('그 이유는 html parser가 script 태그를 만나면 비동기로 처리하지 않고 동기적으로 처리하기 때문에')
+        console.log('렌더링을 멈추게 된다. 즉, script 태그 안의 내용을 해석하는 동안 다른 일을 멈추게 되는 것')
+        console.log('그래서 다른 head에 넣거나 body 태그 앞쪽에 넣게 되면 유저에게 보이는 부분의 렌더링이 그만큼 늦어진다')
+        console.log('script defer, script async를 써서 이걸 해결할 수 있다는데, 간략하게')
+        // defer은 dom 렌더를 방해하지 않고 병렬로 로드되지만 모든 DOM이 로드된 뒤에 실행되고, asnyc는 defer과 똑같이 dom과 병렬로 로드되지만 곧바로 실행된다(약간의 로딩있음).
+        // 그래서 script 태그만 쓰는 경우에는 '순서대로' 로드되는 것이 필수적일 때 쓰고(렌더링을 지연시키면서라도), 나머지는 defer, async를 적절히 쓰는편이 좋겠다
+    </script>
 </body>
 
 </html>
