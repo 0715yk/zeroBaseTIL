@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        kbd {
+            background-color: #eee;
+            border-radius: 3px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+            color: #333;
+            font-size: .85em;
+            font-weight: 700;
+            line-height: 1;
+            padding: 2px 4px;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        input {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>용기위키</h1>
+    <h2>용기위키</h2>
+    <h3>용기위키</h3>
+    <h4>용기위키</h4>
+    <h5>용기위키</h5>
+    <h6>용기위키</h6>
+    <hr />
+    <p>텍스트요소란 무엇일까.. <em>텍스트요소란..?</em></p>
+    <p>하지만 우리들은 텍스트 요소에 대해서 너무 잘알고 있다고 <strong>판단하곤 한다.</strong></p>
+    <strong>blockquote 사용</strong>
+    <blockquote>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum saepe et odio in perspiciatis itaque a
+            corrupti. In, maxime ipsam ex recusandae delectus provident! Fuga ex alias veniam quasi nulla.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum saepe et odio in perspiciatis itaque a
+            corrupti. In, maxime ipsam ex recusandae delectus provident! Fuga ex alias veniam quasi nulla.</p>
+    </blockquote>
+    <strong>일반 p tag 사용</strong>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum saepe et odio in perspiciatis itaque a
+        corrupti. In, maxime ipsam ex recusandae delectus provident! Fuga ex alias veniam quasi nulla.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum saepe et odio in perspiciatis itaque a
+        corrupti. In, maxime ipsam ex recusandae delectus provident! Fuga ex alias veniam quasi nulla.</p>
+    <hr>
+    <strong>q태그 사용 with mark tag</strong>
+    <p><q><mark>신은 죽었다</mark></q> - 니체
+        <div>&nbsp;</div>
+        <strong>kbd태그 사용 with css</strong>
+    </p>
+    <p>Press <kbd>Alt</kbd> + <kbd>F4</kbd> to away from keyboard</p>
+    <h2>#factorial function with recursion#</h2>
+    <pre>
+        <code>
+            const <b>get_factorial</b> = (num) => {
+                if (num === 1) return 1;
+                if (num === 0) return 0;
+                else {
+                    return num * get_factorial(num - 1);
+                }
+            }
+        </code>
+    </pre>
+    <small>code with <abbr title="javascript">JS</abbr></small><br>
+    <small>**위의 코드는 O(n)의 시간 복잡도를 가진다</small><br>
+    <small>**그러나 O(n<sup>2</sup>)으로도 구현 가능하다</small><br>
+    <small>**그러나 O(log<sub>n</sub>n)으로도 구현 가능할지는 모르겠다</small>
+    <h3>문장 뒤집기 게임</h3>
+    <input class="word_before_reversed" type="text" placeholder="문장을 입력해주세요" />
+    <button class="reverse_btn">reverse</button>
+    <p>output : <b class="word_after_reversed"></b></p>
+    <p>예시 : <i>안녕하세요. 저는 홍용기입니다.</i></p>
+    <p>reversed: <bdo dir="rtl"><i>안녕하세요. 저는 홍용기입니다.</i></bdo></p>
+    <small>**윗부분은 bdo 태그를 이용했고, 그위에는 js로직을 이용했음</small>
+    <br>
+    <figure>
+        <img src="data:image/png;base64,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"
+            alt="javascript image" />
+        <figcaption>브렌던 아이크가 만든 스크립트 언어 및 프로그래밍 언어</figcaption>
+    </figure>
+    <br>
+    <hr>
+    <br>
+    <del><a>facebook</a></del>
+    <del><a>instagram</a></del>
+    <a href="https://blog.naver.com/calmmne" target="_blank">blog</a>
+    <a href="https://github.com/0715yk?tab=repositories" target="_blank">github</a>
+    <br>
+    <br>
+    <small>
+        copyright yongki hong <br>published 2021
+    </small><br>
+    <small>
+        <address>
+            서울시 양천구 신정동
+        </address>
+    </small>
+</body>
+<script>
+    const btn = document.querySelector('.reverse_btn')
+    btn.addEventListener('click', () => {
+        const reversedSentence = document.querySelector('.word_after_reversed');
+        const before_reversed_Sentence = document.querySelector('.word_before_reversed');
+        let sentence = before_reversed_Sentence.value;
+        sentence = sentence.split("").reverse().join("");
+        reversedSentence.innerHTML = sentence
+    })
+</script>
+
+</html>

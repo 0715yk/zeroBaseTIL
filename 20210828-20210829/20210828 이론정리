@@ -81,6 +81,8 @@ W3C에 개선안을 제공했고(HTML Living Standard) 현재 우리가 HTML5로
 # live server(로컬서버로 웹 페이지를 띄워서 수정 사항이 바로 반영되도록 하는 것)
 # prettier(자주 써봤지만, 들여쓰기 등 말그대로 prettier하게 코드 배치 등을 조정해줌)
 
+# JSBin 알아두기 
+
 - vsCode 관련 단축키
 # ctrl + w(command + w) : 현재 창을 닫음
 # ctrl + shift + t(command + shift + t) : 위에서 닫은 창을 잘못닫은 경우 다시 열어줌
